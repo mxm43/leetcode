@@ -19,11 +19,7 @@ public:
             if (l1) sum += l1->val;
             if (l2) sum += l2->val;
 
-            if (sum > 9)
-                carry_flag = 1;
-            else
-                carry_flag = 0;
-
+            carry_flag = sum / 10;
             ListNode * tmp = new ListNode(sum % 10);
             if (ret_tail != NULL)
             {
