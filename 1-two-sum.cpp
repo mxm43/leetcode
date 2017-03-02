@@ -1,5 +1,5 @@
 class Solution {
-    public:
+public:
     vector<int> twoSum(vector<int>& nums, int target)
     {
         vector<int> ret_value;
@@ -14,7 +14,7 @@ class Solution {
         vector< pair<int,int> >::iterator i,j;
         for (i = v.begin(); i != v.end()-1; ++i)
         {
-            for (j = i+1; j != v.end() && (*i).first + (*j).first < target; ++j);
+            for (j = i+1; j != v.end() && (*i).first+(*j).first < target; ++j);
             if ((*i).first + (*j).first == target)
                 break;
         }
