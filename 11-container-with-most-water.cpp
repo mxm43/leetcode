@@ -5,21 +5,16 @@ class Solution {
 public:
     int maxArea(vector<int>& height)
     {
-        int max_height = 0, max_area = 0;
-        int rest_count = height.size();
+        int max_area = 0;
+        int i = 0, j = height.size()-1;
 
-        for (int i = 0; i < height.size(); ++i)
-            max_height = MAX(max_height, height[i]);
-
-        for (int i = 0; i < max_height; ++i)
+        while (i < j)
         {
-            vector<int>::iterator f = height.begin();
-            vector<int>::iterator b = height.end()-1;
-
-            for (;; --b) if (*b >= i) break;
-            for (;; ++f) if (*f >= i) break;
-            if (b == f) break;
-            max_area = MAX(max_area, (b-f) * MIN(*f, *b));
+            max_area = MAX(max_area, (j-i)*MIN(height[i], height[j]));
+            if (height[i] < height[j])
+                ++i;
+            else
+                --j;
         }
 
         return max_area;
