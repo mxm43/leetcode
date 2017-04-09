@@ -3,25 +3,20 @@ class Solution
 public:
     int trap(vector<int>& height)
     {
-        int s = 0, e = height.size()-1;
-        int sum = 0, cur = 0;
+        int sum = 0, hl = 0, hr = 0, l = 0, r = height.size();
 
-        while (s < e)
+        while (l < r)
         {
-            while (height[s] <= cur) ++s;
-            while (height[e] <= cur) --e;
-
-            if (s >= e)
-                break;
-
-            ++cur;
-            int count = 0;
-            for (int i = s; i <= e; ++i)
-                if (height[i] >= cur)
-                    ++count;
-
-            sum += e-s+1;
-            sum -= count;
+            if (hl < hr)
+            {
+                sum += max(hl-height[l], 0);
+                hl  =  max(hl, height[l++]);
+            }
+            else
+            {
+                sum += max(hr-height[--r], 0);
+                hr  =  max(hr, height[r]);
+            }
         }
 
         return sum;
