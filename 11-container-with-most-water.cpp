@@ -1,7 +1,5 @@
-#define MIN(a, b) ((a) < (b) ? (a) : (b))
-#define MAX(a, b) ((a) > (b) ? (a) : (b))
-
-class Solution {
+class Solution
+{
 public:
     int maxArea(vector<int>& height)
     {
@@ -10,7 +8,7 @@ public:
 
         while (i < j)
         {
-            max_area = MAX(max_area, (j-i)*MIN(height[i], height[j]));
+            max_area = max(max_area, (j-i)*min(height[i], height[j]));
             if (height[i] < height[j])
                 ++i;
             else

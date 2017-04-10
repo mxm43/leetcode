@@ -1,6 +1,8 @@
-class Solution {
+class Solution
+{
 public:
-    int reverse(int x) {
+    int reverse(int x)
+    {
         int max = ~0 & ~(1 << 31), min = (1 << 31);
         long ret = 0;
 

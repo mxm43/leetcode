@@ -1,6 +1,8 @@
-class Solution {
+class Solution
+{
 public:
-    int myAtoi(string str) {
+    int myAtoi(string str)
+    {
         if (str.size() == 0) return 0;
 
         int  i = 0;

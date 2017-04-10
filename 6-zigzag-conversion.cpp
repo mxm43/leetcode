@@ -1,6 +1,8 @@
-class Solution {
+class Solution
+{
 public:
-    string convert(string s, int numRows) {
+    string convert(string s, int numRows)
+    {
         string ret;
         int step = 2*(numRows-1);
         step = step ? step : 1;

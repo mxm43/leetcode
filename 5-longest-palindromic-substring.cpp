@@ -1,8 +1,8 @@
-#define MIN(a, b) ((a) < (b) ? (a) : (b))
-
-class Solution {
+class Solution
+{
 public:
-    string longestPalindrome(string s) {
+    string longestPalindrome(string s)
+    {
         int pos = 0, max_right = 0;
         vector<char> str(s.size()*2+1);
         vector<int>  rl (s.size()*2+1);
@@ -16,7 +16,7 @@ public:
         for (int i = 0; i < str.size(); ++i)
         {
             if (i < max_right)
-                rl[i] = MIN (rl[pos*2-i], max_right - i);
+                rl[i] = min(rl[pos*2-i], max_right - i);
             else
                 rl[i] = 1;
 

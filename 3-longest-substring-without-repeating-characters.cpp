@@ -1,6 +1,8 @@
-class Solution {
+class Solution
+{
 public:
-    int lengthOfLongestSubstring(string s) {
+    int lengthOfLongestSubstring(string s)
+    {
         int max = 0;
         char flag[256] = {0};
         string::iterator b,e;
