@@ -6,7 +6,7 @@ public:
         int ret = nums.size();
 
         for (int i = 0; i < ret; ++i)
-            while (nums[i] == val && i < ret)
+            while (i < ret && nums[i] == val)
                 nums[i] = nums[--ret];
 
         return ret;

@@ -6,7 +6,7 @@ public:
         if (divisor==0 || (dividend==INT_MIN && divisor==-1))
             return INT_MAX;
 
-        bool neg = (dividend^divisor)>>31 ? true : false;
+        bool neg = ((dividend^divisor)>>31) ? true : false;
         int r = 0, c = 0;
 
         if (dividend > 0)
