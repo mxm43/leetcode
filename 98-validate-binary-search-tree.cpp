@@ -1,21 +1,22 @@
 class Solution
 {
-    bool isValid(TreeNode *root, long lower, long upper)
+    bool isValid(TreeNode *root, TreeNode *lower, TreeNode *upper)
     {
         if (root == NULL)
             return true;
 
-        if (root->val <= lower || root->val >= upper)
+        if ((lower != NULL && root->val <= lower->val) ||
+            (upper != NULL && root->val >= upper->val))
             return false;
 
-        return isValid(root->left, lower, root->val) &&
-               isValid(root->right, root->val, upper);
+        return isValid(root->left, lower, root) &&
+               isValid(root->right, root, upper);
     }
 
 public:
     bool isValidBST(TreeNode* root)
     {
-        return isValid(root, (long)INT_MIN - 1, (long)INT_MAX + 1);
+        return isValid(root, NULL, NULL);
     }
 };
 
