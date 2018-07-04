@@ -9,7 +9,7 @@ public:
         }
     };
 
-    ListNode* mergeKLists(vector<ListNode*>& lists)
+    ListNode *mergeKLists(vector<ListNode *>& lists)
     {
         priority_queue<ListNode *, vector<ListNode *>, cmp> q;
         ListNode  *ret = NULL;

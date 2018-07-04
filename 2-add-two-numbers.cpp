@@ -1,10 +1,10 @@
 class Solution
 {
 public:
-    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
+    ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
     {
-        ListNode * ret_value = NULL;
-        ListNode * ret_tail  = NULL;
+        ListNode *ret_value = NULL;
+        ListNode *ret_tail  = NULL;
         int carry_flag = 0;
 
         while (l1 != NULL || l2 != NULL)
@@ -14,7 +14,7 @@ public:
             if (l2) sum += l2->val;
 
             carry_flag = sum / 10;
-            ListNode * tmp = new ListNode(sum % 10);
+            ListNode *tmp = new ListNode(sum % 10);
             if (ret_tail != NULL)
             {
                 ret_tail->next = tmp;
@@ -23,8 +23,8 @@ public:
             else
                 ret_value = ret_tail = tmp;
 
-            if (l1) l1 = l1->next;
-            if (l2) l2 = l2->next;
+            if (l1 != NULL) l1 = l1->next;
+            if (l2 != NULL) l2 = l2->next;
         }
 
         if (carry_flag)

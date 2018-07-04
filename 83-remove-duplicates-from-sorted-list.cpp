@@ -1,7 +1,7 @@
 class Solution
 {
 public:
-    ListNode* deleteDuplicates(ListNode* head)
+    ListNode *deleteDuplicates(ListNode *head)
     {
         ListNode *p = head;
 

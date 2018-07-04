@@ -1,7 +1,7 @@
 class Solution
 {
 public:
-    ListNode* partition(ListNode* head, int x)
+    ListNode *partition(ListNode *head, int x)
     {
         ListNode *l = NULL, *r = NULL;
         ListNode **lp = &l, **rp = &r;
